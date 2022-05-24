@@ -1,259 +1,259 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce PayLate\n"
-"POT-Creation-Date: 2018-02-27 22:36+0200\n"
-"PO-Revision-Date: 2018-02-27 22:41+0200\n"
+"Project-Id-Version: Gateway for PayLate on WooCommerce\n"
+"POT-Creation-Date: 2022-05-24 21:36+0300\n"
+"PO-Revision-Date: 2022-05-24 21:37+0300\n"
 "Last-Translator: \n"
 "Language-Team: KAGG Design\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
-"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;esc_attr__;esc_html__;esc_html_e\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: vendor\n"
 
-#: includes/class-wc-paylate-gateway.php:109
-#: includes/class-wc-paylate-gateway.php:602
-#: includes/class-wc-paylate-gateway.php:603
+#: classes/class-wc-paylate-gateway.php:124
+#: classes/class-wc-paylate-gateway.php:650
+#: classes/class-wc-paylate-gateway.php:651
 msgid "PayLate"
 msgstr "PayLate"
 
-#: includes/class-wc-paylate-gateway.php:110
+#: classes/class-wc-paylate-gateway.php:125
 msgid "WooCommerce gateway to make payments via PayLate service"
 msgstr "Платёжный шлюз WooCommerce для оплаты с помощью сервиса PayLate"
 
-#: includes/class-wc-paylate-gateway.php:165
+#: classes/class-wc-paylate-gateway.php:170
 msgid "Enable"
 msgstr "Активировать"
 
-#: includes/class-wc-paylate-gateway.php:167
+#: classes/class-wc-paylate-gateway.php:172
 msgid "Enable PayLate Gateway"
 msgstr "Активировать шлюз PayLate"
 
-#: includes/class-wc-paylate-gateway.php:171
+#: classes/class-wc-paylate-gateway.php:176
 msgid "Title"
 msgstr "Заголовок"
 
-#: includes/class-wc-paylate-gateway.php:173
+#: classes/class-wc-paylate-gateway.php:178
 msgid "Payment method title that the customer will see on checkout."
 msgstr ""
 "Заголовок метода платежа, который пользователь увидит при оформлении заказа."
 
-#: includes/class-wc-paylate-gateway.php:174
+#: classes/class-wc-paylate-gateway.php:179
 msgid "PayLate Gateway"
 msgstr "Шлюз PayLate"
 
-#: includes/class-wc-paylate-gateway.php:178
+#: classes/class-wc-paylate-gateway.php:183
 msgid "Description"
 msgstr "Описание"
 
-#: includes/class-wc-paylate-gateway.php:180
+#: classes/class-wc-paylate-gateway.php:185
 msgid "Payment method description that the customer will see on checkout."
 msgstr ""
 "Описание метода платежа, которое пользователь увидит при оформлении заказа."
 
-#: includes/class-wc-paylate-gateway.php:181
+#: classes/class-wc-paylate-gateway.php:186
 msgid "Pay via PayLate Gateway"
 msgstr "Оплата через шлюз PayLate"
 
-#: includes/class-wc-paylate-gateway.php:185
+#: classes/class-wc-paylate-gateway.php:190
 msgid "Log"
 msgstr "Журнал"
 
-#: includes/class-wc-paylate-gateway.php:187
+#: classes/class-wc-paylate-gateway.php:192
 msgid "Enable logging"
 msgstr "Включить журналирование"
 
-#: includes/class-wc-paylate-gateway.php:189
+#: classes/class-wc-paylate-gateway.php:195
 msgid "Log events, such as PayLate responses, inside"
 msgstr "Журналировать события такие, как ответы сервиса PayLate, в"
 
-#: includes/class-wc-paylate-gateway.php:192
+#: classes/class-wc-paylate-gateway.php:199
 msgid "Test mode"
 msgstr "Тестовый режим"
 
-#: includes/class-wc-paylate-gateway.php:194
+#: classes/class-wc-paylate-gateway.php:201
 msgid "Fields below have different values in test mode."
 msgstr "Поля ниже содержат другие значения в тестовом режиме."
 
-#: includes/class-wc-paylate-gateway.php:195
+#: classes/class-wc-paylate-gateway.php:202
 msgid "Enable test mode"
 msgstr "Активировать тестовый режим"
 
-#: includes/class-wc-paylate-gateway.php:204
+#: classes/class-wc-paylate-gateway.php:211
 msgid "Test Port"
 msgstr "Тестовый порт"
 
-#: includes/class-wc-paylate-gateway.php:206
+#: classes/class-wc-paylate-gateway.php:213
 msgid "Test Port number given by PayLate service."
 msgstr "Тестовый порт, предоставленный сервисом PayLate."
 
-#: includes/class-wc-paylate-gateway.php:211
+#: classes/class-wc-paylate-gateway.php:218
 msgid "Test Client ID"
 msgstr "Тестовый идентификатор клиента"
 
-#: includes/class-wc-paylate-gateway.php:213
+#: classes/class-wc-paylate-gateway.php:220
 msgid "Test Client ID given by PayLate service."
 msgstr "Тестовый идентификатор клиента, предоставленный сервисом PayLate."
 
-#: includes/class-wc-paylate-gateway.php:218
+#: classes/class-wc-paylate-gateway.php:225
 msgid "Test Login"
 msgstr "Тестовый логин"
 
-#: includes/class-wc-paylate-gateway.php:220
+#: classes/class-wc-paylate-gateway.php:227
 msgid "Test Login for PayLate service."
 msgstr "Тестовый логин, предоставленный сервисом PayLate."
 
-#: includes/class-wc-paylate-gateway.php:225
+#: classes/class-wc-paylate-gateway.php:232
 msgid "Test Password"
 msgstr "Тестовый пароль"
 
-#: includes/class-wc-paylate-gateway.php:227
+#: classes/class-wc-paylate-gateway.php:234
 msgid "Test Password for PayLate service."
 msgstr "Тестовый пароль для сервиса PayLate."
 
-#: includes/class-wc-paylate-gateway.php:235
+#: classes/class-wc-paylate-gateway.php:242
 msgid "Port"
 msgstr "Порт"
 
-#: includes/class-wc-paylate-gateway.php:237
+#: classes/class-wc-paylate-gateway.php:244
 msgid "Port number given by PayLate service."
 msgstr "Номер порта, предоставленный сервисом PayLate."
 
-#: includes/class-wc-paylate-gateway.php:242
+#: classes/class-wc-paylate-gateway.php:249
 msgid "Client ID"
 msgstr "Идентификатор клиента"
 
-#: includes/class-wc-paylate-gateway.php:244
+#: classes/class-wc-paylate-gateway.php:251
 msgid "Client ID given by PayLate service."
 msgstr "Идентификатор клиента, предоставленный сервисом PayLate."
 
-#: includes/class-wc-paylate-gateway.php:249
+#: classes/class-wc-paylate-gateway.php:256
 msgid "Login"
 msgstr "Логин"
 
-#: includes/class-wc-paylate-gateway.php:251
+#: classes/class-wc-paylate-gateway.php:258
 msgid "Login for PayLate service."
 msgstr "Логин для сервиса PayLate."
 
-#: includes/class-wc-paylate-gateway.php:256
+#: classes/class-wc-paylate-gateway.php:263
 msgid "Password"
 msgstr "Пароль"
 
-#: includes/class-wc-paylate-gateway.php:258
+#: classes/class-wc-paylate-gateway.php:265
 msgid "Password for PayLate service."
 msgstr "Пароль для сервиса PayLate."
 
-#: includes/class-wc-paylate-gateway.php:288
+#: classes/class-wc-paylate-gateway.php:294
 msgid "Fee"
 msgstr "Налог"
 
-#: includes/class-wc-paylate-gateway.php:294
+#: classes/class-wc-paylate-gateway.php:301
 msgid "Coupon"
 msgstr "Купон"
 
-#: includes/class-wc-paylate-gateway.php:371
+#: classes/class-wc-paylate-gateway.php:382
 msgid "Request to PayLate"
 msgstr "Запрос к PayLate"
 
-#: includes/class-wc-paylate-gateway.php:437
+#: classes/class-wc-paylate-gateway.php:449
 msgid "Response from PayLate"
 msgstr "Ответ от PayLate"
 
-#: includes/class-wc-paylate-gateway.php:474
+#: classes/class-wc-paylate-gateway.php:491
 msgid "Bad token by PayLate"
 msgstr "Неправильный токен от PayLate"
 
-#: includes/class-wc-paylate-gateway.php:479
+#: classes/class-wc-paylate-gateway.php:496
 msgid "Wrong sum by PayLate"
 msgstr "Неправильная сумма от PayLate"
 
-#: includes/class-wc-paylate-gateway.php:487
+#: classes/class-wc-paylate-gateway.php:506
 msgid "Order cancelled by customer."
 msgstr "Заказ отменен клиентом."
 
-#: includes/class-wc-paylate-gateway.php:488
+#: classes/class-wc-paylate-gateway.php:508
 msgid "Order is cancelled"
 msgstr "Заказ отменен"
 
-#: includes/class-wc-paylate-gateway.php:491
-#: includes/class-wc-paylate-gateway.php:501
-#: includes/class-wc-paylate-gateway.php:519
+#: classes/class-wc-paylate-gateway.php:514
+#: classes/class-wc-paylate-gateway.php:528
+#: classes/class-wc-paylate-gateway.php:550
 msgid "Your order was cancelled, please create a new one"
 msgstr "Ваш заказ был отменён, пожалуйста, создайте новый"
 
-#: includes/class-wc-paylate-gateway.php:498
+#: classes/class-wc-paylate-gateway.php:522
 msgid "Order is actual"
 msgstr "Заказ актуален"
 
-#: includes/class-wc-paylate-gateway.php:516
+#: classes/class-wc-paylate-gateway.php:544
 msgid "Order is completed"
 msgstr "Заказ выполнен"
 
-#: includes/class-wc-paylate-gateway.php:524
+#: classes/class-wc-paylate-gateway.php:556
 msgid "PayLate unknown error: "
 msgstr "Неизвестная ошибка PayLate: "
 
-#: includes/class-wc-paylate-gateway.php:619
-msgid "WooCommerce Paylate Plugin Options"
-msgstr "Настройки плагина WooCommerce Paylate"
+#: classes/class-wc-paylate-gateway.php:667
+msgid "Gateway for PayLate on WooCommerce Plugin Options"
+msgstr "Настройки плагина Gateway for PayLate on WooCommerce"
 
-#: includes/class-wc-paylate-gateway.php:625
+#: classes/class-wc-paylate-gateway.php:673
 msgid "Please follow this link to see plugin options."
 msgstr "Пожалуйста, воспользуйтесь этой ссылкой, чтобы увидеть опции плагина."
 
-#: includes/class-wc-paylate-gateway.php:659
+#: classes/class-wc-paylate-gateway.php:712
 msgid "How to buy in installments"
 msgstr "Как купить в рассрочку"
 
-#: includes/class-wc-paylate-gateway.php:698
+#: classes/class-wc-paylate-gateway.php:754
 msgid "Invalid parameter: name, price or count"
 msgstr "Неправильный параметр: наименование, цена или количество"
 
-#: includes/class-wc-paylate-plugin.php:164
+#: classes/class-wc-paylate-plugin.php:130
 msgid ""
-"WooCommerce PayLate plugin requires the following plugins installed and "
-"activated: "
+"Gateway for PayLate on WooCommerce plugin requires the following plugins "
+"installed and activated: "
 msgstr ""
-"Плагин WooCommerce PayLate требует, чтобы следующие плагины были установлены "
-"и активированы: "
+"Плагин Gateway for PayLate on WooCommerce требует, чтобы следующие плагины "
+"были установлены и активированы: "
 
-#: includes/class-wc-paylate-plugin.php:196
-msgid "WooCommerce PayLate plugin has been deactivated."
-msgstr "Плагин WooCommerce PayLate был деактивирован."
+#: classes/class-wc-paylate-plugin.php:170
+msgid "Gateway for PayLate on WooCommerce plugin has been deactivated."
+msgstr "Плагин Gateway for PayLate on WooCommerce был деактивирован."
 
-#: includes/class-wc-paylate-plugin.php:236
-msgid "View WooCommerce PayLate settings"
-msgstr "Посмотреть настройки WooCommerce PayLate"
+#: classes/class-wc-paylate-plugin.php:216
+msgid "View Gateway for PayLate on WooCommerce settings"
+msgstr "Посмотреть настройки Gateway for PayLate on WooCommerce"
 
-#: includes/class-wc-paylate-plugin.php:236
+#: classes/class-wc-paylate-plugin.php:217
 msgid "Settings"
 msgstr "Настройки"
 
-#: includes/wc-gateway-paylate-codes.php:18
+#: classes/wc-gateway-paylate-codes.php:21
 msgid "Order is cancelled by client"
 msgstr "Заказ отменён клиентом"
 
-#: includes/wc-gateway-paylate-codes.php:19
+#: classes/wc-gateway-paylate-codes.php:22
 msgid "PayLate requests to ship order"
 msgstr "PayLate запрашивает возможность отправки заказа"
 
-#: includes/wc-gateway-paylate-codes.php:20
+#: classes/wc-gateway-paylate-codes.php:23
 msgid "PayLate payment approved"
 msgstr "Оплата через PayLate подтверждена"
 
-#: includes/wc-gateway-paylate-codes.php:25
+#: classes/wc-gateway-paylate-codes.php:30
 msgid "Unknown error"
 msgstr "Неизвестная ошибка"
 
-#: woocommerce-paylate.php:56
-msgid "Cannot initialize Freemius SDK"
-msgstr "Невозможно инициализировать Freemius SDK"
+#~ msgid "Cannot initialize Freemius SDK"
+#~ msgstr "Невозможно инициализировать Freemius SDK"
 
 #~ msgid "How to buy on credit"
 #~ msgstr "Как купить в кредит"

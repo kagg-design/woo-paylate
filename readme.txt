@@ -1,4 +1,4 @@
-=== WooCommerce PayLate ===
+=== Gateway for PayLate on WooCommerce ===
 Contributors: kaggdesign
 Donate link: https://www.paypal.me/kagg
 Tags: woocommerce, gateway, paylate
@@ -9,11 +9,11 @@ Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WooCommerce PayLate Gateway to provide payments via PayLate service.
+Gateway for PayLate on WooCommerce provides WooCommerce payments via PayLate service.
 
 == Description ==
 
-WooCommerce PayLate is a WooCommerce payment gateway, which allows user to make payments via PayLate service.
+Gateway for PayLate on WooCommerce is a WooCommerce payment gateway, which allows user to make payments via PayLate service.
 
 Plugin has options page on the backend, to setup required connection parameters provided by PayLate service. Please see screenshots.
 
@@ -61,9 +61,9 @@ where
 
 = Automatic installation =
 
-Automatic installation is the easiest option as WordPress handles the file transfers itself and you don’t need to leave your web browser. To do an automatic install of WooCommerce PayLate, log in to your WordPress dashboard, navigate to the Plugins menu and click Add New.
+Automatic installation is the easiest option as WordPress handles the file transfers itself, and you don’t need to leave your web browser. To do an automatic install of Gateway for PayLate on WooCommerce, log in to your WordPress dashboard, navigate to the Plugins menu and click Add New.
 
-In the search field type “WooCommerce PayLate” and click Search Plugins. Once you’ve found our plugin you can view details about it such as the point release, rating and description. Most importantly of course, you can install it by simply clicking “Install Now”.
+In the search field type “Gateway for PayLate on WooCommerce” and click Search Plugins. Once you’ve found our plugin you can view details about it such as the point release, rating and description. Most importantly of course, you can install it by simply clicking “Install Now”.
 
 = Manual installation =
 
@@ -77,11 +77,11 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 = Where can I get support or talk to other users? =
 
-If you get stuck, you can ask for help in the [WooCommerce PayLate Plugin Forum](https://wordpress.org/support/plugin/woo-paylate).
+If you get stuck, you can ask for help in the [Gateway for PayLate on WooCommerce Plugin Forum](https://wordpress.org/support/plugin/woo-paylate).
 
 == Screenshots ==
 
-1. The WooCommerce PayLate settings panel.
+1. The Gateway for PayLate on WooCommerce settings panel.
 2. Checkout page.
 
 == Changelog ==

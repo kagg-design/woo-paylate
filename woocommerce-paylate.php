@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WooCommerce PayLate
+ * Plugin Name: Gateway for PayLate on WooCommerce
  * Plugin URI: https://wordpress.org/plugins/woo-paylate/
  * Description: WooCommerce payment gateway for PayLate service.
  * Author: KAGG Design

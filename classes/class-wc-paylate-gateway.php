@@ -664,7 +664,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 			<h2 id="title">
 				<?php
 				// Admin panel title.
-				esc_html_e( 'WooCommerce Paylate Plugin Options', 'woo-paylate' );
+				esc_html_e( 'Gateway for PayLate on WooCommerce Plugin Options', 'woo-paylate' );
 				?>
 			</h2>
 			<p>

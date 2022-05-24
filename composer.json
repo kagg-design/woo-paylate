@@ -1,6 +1,6 @@
 {
   "name": "kagg-design/woo-paylate",
-  "description": "WooCommerce PayLate Gateway to provide payments via PayLate service.",
+  "description": "Gateway for PayLate on WooCommerce to provide payments via PayLate service.",
   "license": "GPL-2.0",
   "keywords": [
     "woocommerce",

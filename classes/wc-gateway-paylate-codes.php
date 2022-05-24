@@ -1,6 +1,6 @@
 <?php
 /**
- * WooCommerce PayLate Gateway Codes.
+ * Gateway for PayLate on WooCommerce Codes.
  *
  * @package woo-paylate
  */

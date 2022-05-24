@@ -127,7 +127,7 @@ class WC_PayLate_Plugin {
 	 */
 	public function show_plugin_not_found_notice() {
 		$message = __(
-			'WooCommerce PayLate plugin requires the following plugins installed and activated: ',
+			'Gateway for PayLate on WooCommerce plugin requires the following plugins installed and activated: ',
 			'woo-paylate'
 		);
 
@@ -167,7 +167,7 @@ class WC_PayLate_Plugin {
 	 */
 	public function show_deactivate_notice() {
 		$this->admin_notice(
-			__( 'WooCommerce PayLate plugin has been deactivated.', 'woo-paylate' ),
+			__( 'Gateway for PayLate on WooCommerce plugin has been deactivated.', 'woo-paylate' ),
 			'notice notice-info is-dismissible'
 		);
 	}
@@ -213,7 +213,7 @@ class WC_PayLate_Plugin {
 		$action_links = [
 			'settings' =>
 				'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=checkout&section=paylate_gateway' ) .
-				'" aria-label="' . esc_attr__( 'View WooCommerce PayLate settings', 'woo-paylate' ) .
+				'" aria-label="' . esc_attr__( 'View Gateway for PayLate on WooCommerce settings', 'woo-paylate' ) .
 				'">' . esc_html__( 'Settings', 'woo-paylate' ) . '</a>',
 		];
 
@@ -221,7 +221,7 @@ class WC_PayLate_Plugin {
 	}
 
 	/**
-	 * Function to check if request to WordPress is related to this WooCommerce PayLate Gateway plugin.
+	 * Function to check if request to WordPress is related to this Gateway for PayLate on WooCommerce plugin.
 	 */
 	public function check_for_paylate() {
 		/**

@@ -1,4 +1,4 @@
-# WordPress Plugin WooCommerce PayLate
+# WordPress Plugin Gateway for PayLate on WooCommerce
 
 WooCommerce payment gateway, which allows user to make payments via PayLate service.
 
@@ -6,7 +6,7 @@ WooCommerce payment gateway, which allows user to make payments via PayLate serv
 
 ## Contents
 
-The WordPress Plugin WooCommerce PayLate includes the following files:
+The WordPress Plugin Gateway for PayLate on WooCommerce includes the following files:
 
 * `.gitignore`. Used to exclude certain files from the repository.
 * `CHANGELOG.md`. The list of changes to the core project.
@@ -49,25 +49,25 @@ where
 
 "class" is a CSS class to be added to the widget, and "data-button" is type of the button provided by PayLate (1-4)
 
-* The WooCommerce PayLate is based on the [Plugin API](http://codex.wordpress.org/Plugin_API), [Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards), and [Documentation Standards](https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/).
-* The WooCommerce PayLate is based on the [WooCommerce Gateway API](https://docs.woocommerce.com/document/payment-gateway-api/).
+* The Gateway for PayLate on WooCommerce is based on the [Plugin API](http://codex.wordpress.org/Plugin_API), [Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards), and [Documentation Standards](https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/php/).
+* The Gateway for PayLate on WooCommerce is based on the [WooCommerce Gateway API](https://docs.woocommerce.com/document/payment-gateway-api/).
 * All classes, functions, and variables are documented so that you know what you need to be changed.
-* The WooCommerce PayLate uses a strict file organization scheme that correspond both to the WordPress Plugin Repository structure, and that make it easy to organize the files that compose the plugin.
+* The Gateway for PayLate on WooCommerce uses a strict file organization scheme that correspond both to the WordPress Plugin Repository structure, and that make it easy to organize the files that compose the plugin.
 * The project includes a `.pot` file as a starting point for internationalization.
 
 ## Installation
 
-The WooCommerce PayLate can be installed directly into your plugins folder "as-is".
+The Gateway for PayLate on WooCommerce can be installed directly into your plugins folder "as-is".
 
 ## WordPress.org Preparation
 
-The original launch of this version of the WooCommerce PayLate included the folder structure needed for using your plugin on the WordPress.org. That folder structure has been moved to its own repo here: https://github.com/kagg/
+The original launch of this version of the Gateway for PayLate on WooCommerce included the folder structure needed for using your plugin on the WordPress.org. That folder structure has been moved to its own repo here: https://github.com/kagg/
 
 ## Recommended Tools
 
 ### i18n Tools
 
-The WordPress Plugin WooCommerce PayLate uses a variable to store the text domain used when internationalizing strings throughout the WooCommerce PayLate. To take advantage of this method, there are tools that are recommended for providing correct, translatable files:
+The WordPress Plugin Gateway for PayLate on WooCommerce uses a variable to store the text domain used when internationalizing strings throughout the Gateway for PayLate on WooCommerce. To take advantage of this method, there are tools that are recommended for providing correct, translatable files:
 
 * [Poedit](https://poedit.net/)
 * [makepot](http://i18n.svn.wordpress.org/tools/trunk/)
@@ -77,7 +77,7 @@ Any of the above tools should provide you with the proper tooling to internation
 
 ## License
 
-The WordPress Plugin WooCommerce PayLate is licensed under the GPL v2 or later.
+The WordPress Plugin Gateway for PayLate on WooCommerce is licensed under the GPL v2 or later.
 
 > This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License, version 2, as published by the Free Software Foundation.
 
@@ -91,13 +91,13 @@ A copy of the license is included in the root of the plugin’s directory. The f
 
 ### Licensing
 
-The WordPress Plugin WooCommerce PayLate is licensed under the GPL v2 or later; however, if you opt to use third-party code that is not compatible with v2, then you may need to switch to using code that is GPL v3 compatible.
+The WordPress Plugin Gateway for PayLate on WooCommerce is licensed under the GPL v2 or later; however, if you opt to use third-party code that is not compatible with v2, then you may need to switch to using code that is GPL v3 compatible.
 
 For reference, [here's a discussion](https://make.wordpress.org/themes/2013/03/04/licensing-note-apache-and-gpl/) that covers the Apache 2.0 License used by [Bootstrap](http://getbootstrap.com/2.3.2/).
 
 # Credits
 
-The current version of the WooCommerce PayLate was developed by [KAGG Design](https://kagg.eu/en/).
+The current version of the Gateway for PayLate on WooCommerce was developed by [KAGG Design](https://kagg.eu/en/).
 
 ## Documentation, FAQs, and More
 
