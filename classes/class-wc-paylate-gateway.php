@@ -598,7 +598,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		// Script for paylate_buy_button_shortcode.
 		wp_enqueue_script(
 			'wc-paylate-partner',
-			'https://paylate.ru:' . $this->port . '/js/partner_im.js',
+			'https://paylate.ru/js/partner_im.js',
 			[],
 			WOO_PAYLATE_VERSION,
 			false
@@ -607,7 +607,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		// Script for paylate_widget_shortcode.
 		wp_enqueue_script(
 			'wc-paylate-widget',
-			'https://paylate.ru:' . $this->port . '/widget/js/widget.js',
+			'https://paylate.ru/widget/js/widget.js',
 			[],
 			WOO_PAYLATE_VERSION,
 			true
@@ -702,14 +702,14 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 
 		ob_start();
 
-		echo '<div class="paylate-mini-widget ' . esc_attr( $class ) . '"';
+		echo '<a class="paylate-mini-widget ' . esc_attr( $class ) . '"';
 		$data_button = (int) $atts['data-button'];
 
 		if ( $data_button >= 1 && $data_button <= 4 ) {
 			echo ' data-button="' . esc_html( $data_button ) . '"';
 		}
 
-		echo ' href="#">' . esc_html__( 'How to buy in installments', 'woo-paylate' ) . '</div>';
+		echo ' href="#">' . esc_html__( 'How to buy in installments', 'woo-paylate' ) . '</a>';
 
 		return ob_get_clean();
 	}
