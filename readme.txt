@@ -5,7 +5,7 @@ Tags: woocommerce, gateway, paylate
 Requires at least: 4.4
 Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 1.5
+Stable tag: 1.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,10 +86,7 @@ If you get stuck, you can ask for help in the [Gateway for PayLate on WooCommerc
 
 == Changelog ==
 
-= 1.5.1 =
-* WC and Paylate trademarks removed
-
-= 1.5 =
+= 1.5.2 =
 * Freemius library removed
 * Tested with WordPress 6.0
 * Tested with WooCommerce 6.5
