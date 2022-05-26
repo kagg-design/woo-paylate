@@ -2,7 +2,7 @@
 
 WooCommerce payment gateway, which allows user to make payments via PayLate service.
 
-![](./.wordpress-org/banner-1544x500.png)
+![](./.wordpress-org/banner-1544x500.jpg)
 
 ## Contents
 
