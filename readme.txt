@@ -86,6 +86,9 @@ If you get stuck, you can ask for help in the [Gateway for PayLate on WooCommerc
 
 == Changelog ==
 
+= 1.5.1 =
+* WC and Paylate trademarks removed
+
 = 1.5 =
 * Freemius library removed
 * Tested with WordPress 6.0
