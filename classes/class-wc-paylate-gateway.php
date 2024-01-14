@@ -586,6 +586,8 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	 * Enqueue plugin scripts.
 	 */
 	public function enqueue_scripts() {
+		$min = $this->min_suffix();
+
 		// Script for paylate_buy_button_shortcode.
 		wp_enqueue_script(
 			'wc-paylate-partner',
@@ -607,7 +609,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		// This plugin styles.
 		wp_enqueue_style(
 			'wc-paylate',
-			WOO_PAYLATE_URL . '/assets/css/style.css',
+			WOO_PAYLATE_URL . "/assets/css/style$min.css",
 			[],
 			WOO_PAYLATE_VERSION
 		);
@@ -800,5 +802,14 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		<?php
 
 		return (string) ob_get_clean();
+	}
+
+	/**
+	 * Get min suffix.
+	 *
+	 * @return string
+	 */
+	private function min_suffix(): string {
+		return defined( 'SCRIPT_DEBUG' ) && constant( 'SCRIPT_DEBUG' ) ? '' : '.min';
 	}
 }
