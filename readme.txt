@@ -3,9 +3,9 @@ Contributors: kaggdesign
 Donate link: https://www.paypal.me/kagg
 Tags: woocommerce, gateway, paylate
 Requires at least: 4.4
-Tested up to: 6.0
+Tested up to: 6.4
 Requires PHP: 5.6
-Stable tag: 1.5.2
+Stable tag: 1.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,11 @@ If you get stuck, you can ask for help in the [Gateway for PayLate on WooCommerc
 2. Checkout page.
 
 == Changelog ==
+
+= 1.5.3 =
+* Tested with WordPress 6.4
+* Tested with WooCommerce 8.4
+* Fixed duplicated submenu.
 
 = 1.5.2 =
 * Freemius library removed
