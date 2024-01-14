@@ -2,9 +2,9 @@
 Contributors: kaggdesign
 Donate link: https://www.paypal.me/kagg
 Tags: woocommerce, gateway, paylate
-Requires at least: 4.4
+Requires at least: 5.0
 Tested up to: 6.4
-Requires PHP: 5.6
+Requires PHP: 7.0
 Stable tag: 1.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -15,13 +15,13 @@ Gateway for PayLate on WooCommerce provides WooCommerce payments via PayLate ser
 
 Gateway for PayLate on WooCommerce is a WooCommerce payment gateway, which allows user to make payments via PayLate service.
 
-Plugin has options page on the backend, to setup required connection parameters provided by PayLate service. Please see screenshots.
+The plugin has options' page on the backend, to set up required connection parameters provided by PayLate service. Please see screenshots.
 
 Plugin provides
 
-* Full integration with WooCommerce as payment gateway
-* Buy Button to send the order to PayLate
-* Widget to show popup window with explanation of PayLate service
+* Full integration with WooCommerce as payment gateway.
+* Buy Button to send the order to PayLate.
+* Widget to show a popup window with explanation of PayLate service.
 
 To create a Buy Button, use the following shortcode:
 
@@ -61,9 +61,9 @@ where
 
 = Automatic installation =
 
-Automatic installation is the easiest option as WordPress handles the file transfers itself, and you don’t need to leave your web browser. To do an automatic install of Gateway for PayLate on WooCommerce, log in to your WordPress dashboard, navigate to the Plugins menu and click Add New.
+Automatic installation is the easiest option as WordPress handles the file transfers itself, and you don’t need to leave your web browser. To do an automatic installation of Gateway for PayLate on WooCommerce, log in to your WordPress dashboard, navigate to the Plugins menu and click Add New.
 
-In the search field type “Gateway for PayLate on WooCommerce” and click Search Plugins. Once you’ve found our plugin you can view details about it such as the point release, rating and description. Most importantly of course, you can install it by simply clicking “Install Now”.
+In the search field type “Gateway for PayLate on WooCommerce” and click Search Plugins. Once you’ve found our plugin, you can view details about it such as the point release, rating and description. Most importantly, you can install it by simply clicking “Install Now.”
 
 = Manual installation =
 
@@ -71,7 +71,7 @@ The manual installation method involves downloading our plugin and uploading it 
 
 = Updating =
 
-Automatic updates should work like a charm; as always though, ensure you backup your site just in case.
+Automatic updates should work like a charm; as always though, ensure you back up your site just in case.
 
 == Frequently Asked Questions ==
 
@@ -86,7 +86,9 @@ If you get stuck, you can ask for help in the [Gateway for PayLate on WooCommerc
 
 == Changelog ==
 
-= 1.5.3 =
+= 2.0.0 =
+* The minimum required WordPress version is now 5.0.
+* The minimum required PHP version is now 7.0.
 * Tested with WordPress 6.4
 * Tested with WooCommerce 8.4
 * Fixed duplicated submenu.

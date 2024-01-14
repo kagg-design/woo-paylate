@@ -48,11 +48,11 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	public $method_description;
 
 	/**
-	 * Plugin has fields ( = false ).
+	 * Whether plugin has fields.
 	 *
 	 * @var string
 	 */
-	public $has_fields;
+	public $has_fields = false;
 
 	/**
 	 * Plugin supports ( = products ).
@@ -90,7 +90,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	protected $port;
 
 	/**
-	 * Client ID  given by PayLate service.
+	 * Client ID given by PayLate service.
 	 *
 	 * @var string
 	 */
@@ -123,7 +123,6 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		$this->icon               = WOO_PAYLATE_URL . '/images/paylate-logo-32x32.png';
 		$this->method_title       = __( 'PayLate', 'woo-paylate' );
 		$this->method_description = __( 'WooCommerce gateway to make payments via PayLate service', 'woo-paylate' );
-		$this->has_fields         = false;
 		$this->supports           = [ 'products' ];
 
 		$this->init_form_fields();
@@ -278,7 +277,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	 *
 	 * @return array
 	 */
-	public function process_payment( $order_id ) {
+	public function process_payment( $order_id ): array {
 		$order = wc_get_order( $order_id );
 
 		$subtotal = 0;
@@ -372,7 +371,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	 *
 	 * @return string Payment link.
 	 */
-	private function get_payment_link( $goods, $order_id, $all_cats ) {
+	private function get_payment_link( $goods, $order_id, $all_cats ): string {
 		$goods_encoded = wp_json_encode( $goods, JSON_UNESCAPED_UNICODE );
 
 		$token = md5( $this->login . md5( $this->password ) . $order_id );
@@ -616,11 +615,13 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	 *
 	 * @return string
 	 */
-	public function script_loader_tag_filter( $tag, $handle ) {
+	public function script_loader_tag_filter( $tag, $handle ): string {
+		$tag     = (string) $tag;
 		$handles = [
 			'wc-paylate-partner',
 			'wc-paylate-widget',
 		];
+
 		if ( in_array( $handle, $handles, true ) ) {
 			$tag = str_replace( '></script>', ' charset="utf-8"></script>', $tag );
 		}
@@ -629,7 +630,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	}
 
 	/**
-	 * Add settings page to the menu.
+	 * Add the settings page to the menu.
 	 */
 	public function add_settings_page() {
 		$parent_slug = 'woocommerce';
@@ -638,6 +639,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		$capability  = 'manage_options';
 		$menu_slug   = 'wc-paylate';
 		$function    = [ $this, 'woocommerce_paylate_settings_page' ];
+
 		add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function );
 	}
 
@@ -671,7 +673,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	 *
 	 * @return string Button html.
 	 */
-	public function paylate_widget_shortcode( $atts ) {
+	public function paylate_widget_shortcode( $atts ): string {
 		$atts = shortcode_atts(
 			[
 				'class'       => '',
@@ -697,7 +699,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 
 		echo ' href="#">' . esc_html__( 'How to buy in installments', 'woo-paylate' ) . '</a>';
 
-		return ob_get_clean();
+		return (string) ob_get_clean();
 	}
 
 	/**
@@ -707,7 +709,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	 *
 	 * @return string Button html.
 	 */
-	public function paylate_buy_button_shortcode( $atts ) {
+	public function paylate_buy_button_shortcode( $atts ): string {
 		$atts = shortcode_atts(
 			[
 				'name'     => '',
@@ -784,6 +786,6 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		</script>
 		<?php
 
-		return ob_get_clean();
+		return (string) ob_get_clean();
 	}
 }

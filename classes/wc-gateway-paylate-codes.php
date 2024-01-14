@@ -10,11 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Get result message.
+ * Get a result message.
  *
  * @param string $result Result code.
  *
  * @return string
+ * @noinspection PackedHashtableOptimizationInspection
  */
 function wc_paylate_get_result_message( $result ) {
 	$result_messages = [

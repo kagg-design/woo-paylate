@@ -69,18 +69,19 @@ class WC_PayLate_Plugin {
 	/**
 	 * Add PayLate gateway class in WooCommerce payment methods.
 	 *
-	 * @param array $methods - array of WooCommerce payment methods.
+	 * @param array|mixed $methods - array of WooCommerce payment methods.
 	 *
 	 * @return array
 	 */
-	public function add_paylate_gateway_class( $methods ) {
+	public function add_paylate_gateway_class( $methods ): array {
+		$methods   = (array) $methods;
 		$methods[] = 'WC_PayLate_Gateway';
 
 		return $methods;
 	}
 
 	/**
-	 * Check plugin requirements. If not met, show message and deactivate plugin.
+	 * Check plugin requirements. If not met, show a message and deactivate the plugin.
 	 */
 	public function check_requirements() {
 		if ( $this->requirements_met() ) {
@@ -109,7 +110,7 @@ class WC_PayLate_Plugin {
 	 *
 	 * @return bool Requirements met.
 	 */
-	private function requirements_met() {
+	private function requirements_met(): bool {
 		$all_active = true;
 
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -126,7 +127,7 @@ class WC_PayLate_Plugin {
 	}
 
 	/**
-	 * Show required plugins not found message.
+	 * Show "required plugins not found" message.
 	 */
 	public function show_plugin_not_found_notice() {
 		$message = __(
@@ -178,13 +179,13 @@ class WC_PayLate_Plugin {
 	/**
 	 * Show admin notice.
 	 *
-	 * @param string $message Message to show.
-	 * @param string $class   Message class: notice notice-success notice-error notice-warning notice-info
-	 *                        is-dismissible.
+	 * @param string $message    Message to show.
+	 * @param string $class_name Message class: notice notice-success notice-error notice-warning notice-info
+	 *                           is-dismissible.
 	 */
-	private function admin_notice( $message, $class ) {
+	private function admin_notice( $message, $class_name ) {
 		?>
-		<div class="<?php echo esc_attr( $class ); ?>">
+		<div class="<?php echo esc_attr( $class_name ); ?>">
 			<p>
 				<span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;">
 				<?php echo wp_kses( $message, wp_kses_allowed_html( 'post' ) ); ?>
@@ -212,7 +213,7 @@ class WC_PayLate_Plugin {
 	 *
 	 * @return array Plugin links
 	 */
-	public function add_settings_link( $links ) {
+	public function add_settings_link( $links ): array {
 		$action_links = [
 			'settings' =>
 				'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=checkout&section=paylate_gateway' ) .
@@ -220,7 +221,7 @@ class WC_PayLate_Plugin {
 				'">' . esc_html__( 'Settings', 'woo-paylate' ) . '</a>',
 		];
 
-		return array_merge( $action_links, $links );
+		return array_merge( $action_links, (array) $links );
 	}
 
 	/**
@@ -228,7 +229,7 @@ class WC_PayLate_Plugin {
 	 */
 	public function check_for_paylate() {
 		/**
-		 * If POST contains application_id - it is request from PayLate service.
+		 * If POST contains application_id - it is a request from PayLate service.
 		 * We have to start gateways and invoke check action.
 		 */
 		if ( isset( $_POST['application_id'] ) ) {
@@ -238,8 +239,8 @@ class WC_PayLate_Plugin {
 		}
 
 		/**
-		 * If GET contains paylate_gateway - it is self hook from this plugin.
-		 * We have to create form and make POST request to the PayLate service.
+		 * If GET contains paylate_gateway - it is self-hook from this plugin.
+		 * We have to create a form and make a POST request to the PayLate service.
 		 */
 		if ( isset( $_GET['paylate_gateway'] ) ) {
 			if (
