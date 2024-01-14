@@ -126,7 +126,7 @@ class Gateway extends WC_Payment_Gateway {
 	 */
 	public function __construct() {
 		$this->id                 = 'paylate_gateway';
-		$this->icon               = WOO_PAYLATE_URL . '/assets/images/paylate-logo-32x32.png';
+		$this->icon               = WOO_PAYLATE_URL . '/assets/images/paylate-logo.svg';
 		$this->method_title       = __( 'PayLate', 'woo-paylate' );
 		$this->method_description = __( 'WooCommerce gateway to make payments via PayLate service', 'woo-paylate' );
 		$this->supports           = [ 'products' ];
