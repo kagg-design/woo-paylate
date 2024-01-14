@@ -260,7 +260,7 @@ class WC_PayLate_Plugin {
 							?>
 							<input
 								type="hidden" name="<?php echo esc_attr( $a ); ?>"
-								value="<?php echo esc_attr( $b ); ?>">
+								value="<?php echo esc_attr( wp_unslash( $b ) ); ?>">
 							<?php
 						}
 					}
