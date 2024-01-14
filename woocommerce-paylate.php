@@ -56,8 +56,13 @@ require_once WOO_PAYLATE_PATH . '/vendor/autoload.php';
  * @return WC_PayLate_Plugin
  */
 function wc_paylate_plugin() {
+	static $plugin;
 
-	return new WC_PayLate_Plugin();
+	if ( ! $plugin ) {
+		$plugin = new WC_PayLate_Plugin();
+	}
+
+	return $plugin;
 }
 
 wc_paylate_plugin()->maybe_run();
