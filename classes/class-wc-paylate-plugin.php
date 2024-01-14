@@ -130,12 +130,12 @@ class WC_PayLate_Plugin {
 	 * Show "required plugins not found" message.
 	 */
 	public function show_plugin_not_found_notice() {
-		$message = __(
+		$message       = __(
 			'Gateway for PayLate on WooCommerce plugin requires the following plugins installed and activated: ',
 			'woo-paylate'
 		);
-
 		$message_parts = [];
+
 		foreach ( $this->required_plugins as $required_plugin ) {
 			if ( ! $required_plugin['active'] ) {
 				$href = '/wp-admin/plugin-install.php?tab=plugin-information&plugin=';
@@ -288,11 +288,14 @@ class WC_PayLate_Plugin {
 	 *                        emergency|alert|critical|error|warning|notice|info|debug.
 	 */
 	public static function log( $message, $level = 'info' ) {
-		if ( self::$log_enabled ) {
-			if ( empty( self::$log ) ) {
-				self::$log = wc_get_logger();
-			}
-			self::$log->log( $level, $message, [ 'source' => 'paylate' ] );
+		if ( ! self::$log_enabled ) {
+			return;
 		}
+
+		if ( empty( self::$log ) ) {
+			self::$log = wc_get_logger();
+		}
+
+		self::$log->log( $level, $message, [ 'source' => 'paylate' ] );
 	}
 }

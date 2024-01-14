@@ -203,6 +203,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		];
 
 		$this->test_mode = $this->get_option( 'test_mode' );
+
 		if ( 'yes' === $this->test_mode ) {
 			$var_form_fields = [
 				'test_port'      => [
@@ -285,6 +286,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		// Get all products.
 		$goods    = [];
 		$all_cats = [];
+
 		foreach ( $order->get_items( [ 'line_item', 'fee', 'coupon' ] ) as $item ) {
 			$cur_item = [];
 
@@ -412,6 +414,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		$query .= "&_wpnonce=$nonce";
 
 		parse_str( $query, $parsed_query );
+
 		$parsed_query = rawurlencode_deep( $parsed_query );
 
 		return add_query_arg( $parsed_query, $link );
@@ -568,12 +571,15 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	 *                        emergency|alert|critical|error|warning|notice|info|debug.
 	 */
 	public static function log( $message, $level = 'info' ) {
-		if ( self::$log_enabled ) {
-			if ( empty( self::$log ) ) {
-				self::$log = wc_get_logger();
-			}
-			self::$log->log( $level, $message, [ 'source' => 'paylate' ] );
+		if ( ! self::$log_enabled ) {
+			return;
 		}
+
+		if ( empty( self::$log ) ) {
+			self::$log = wc_get_logger();
+		}
+
+		self::$log->log( $level, $message, [ 'source' => 'paylate' ] );
 	}
 
 	/**
@@ -724,16 +730,19 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		);
 
 		$atts['price'] = (int) $atts['price'];
+
 		if ( 0 > $atts['price'] ) {
 			$atts['price'] = 0;
 		}
 
 		$atts['count'] = (int) $atts['count'];
+
 		if ( 0 > $atts['count'] ) {
 			$atts['count'] = 0;
 		}
 
 		$atts['type'] = (int) $atts['type'];
+
 		if ( 0 > $atts['type'] || 3 < $atts['type'] ) {
 			$atts['type'] = 0;
 		}
@@ -743,14 +752,18 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		}
 
 		$cur_item['Name'] = $atts['name'];
+
 		if ( '' !== $atts['category'] ) {
 			$cur_item['Category'] = $atts['category'];
 		}
+
 		$cur_item['Price'] = $atts['price'];
 		$cur_item['Count'] = $atts['count'];
+
 		if ( '' !== $atts['fio'] ) {
 			$cur_item['fio'] = $atts['fio'];
 		}
+
 		if ( '' !== $atts['passport'] ) {
 			$cur_item['passport'] = $atts['passport'];
 		}
