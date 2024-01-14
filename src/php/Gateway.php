@@ -1,14 +1,20 @@
 <?php
 /**
- * WC_PayLate_Gateway class file.
+ * Gateway class file.
  *
  * @package woo-paylate
  */
 
+namespace KAGG\Paylate;
+
+use WC_Log_Handler_File;
+use WC_Order_Item_Product;
+use WC_Payment_Gateway;
+
 /**
- * Class WC_PayLate_Gateway
+ * Class Gateway
  */
-class WC_PayLate_Gateway extends WC_Payment_Gateway {
+class Gateway extends WC_Payment_Gateway {
 	/**
 	 * Default port.
 	 */
@@ -116,7 +122,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	const TEST_ORDER_ID = 235;
 
 	/**
-	 * WC_PayLate_Gateway constructor.
+	 * Gateway constructor.
 	 */
 	public function __construct() {
 		$this->id                 = 'paylate_gateway';
@@ -148,8 +154,8 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_filter( 'script_loader_tag', [ $this, 'script_loader_tag_filter' ], 10, 2 );
-		add_shortcode( 'paylate_widget', [ $this, 'paylate_widget_shortcode' ] );
-		add_shortcode( 'paylate_buy_button', [ $this, 'paylate_buy_button_shortcode' ] );
+		add_shortcode( 'paylate_widget', [ $this, 'widget_shortcode' ] );
+		add_shortcode( 'paylate_buy_button', [ $this, 'buy_button_shortcode' ] );
 		add_action( 'check_paylate_gateway', [ $this, 'check_response' ] );
 		add_action( 'admin_menu', [ $this, 'add_settings_page' ], 100 );
 
@@ -426,9 +432,6 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	 * @return void|null
 	 */
 	public function check_response() {
-		// Require functions returning messages from codes.
-		require_once WOO_PAYLATE_PATH . '/includes/wc-gateway-paylate-codes.php';
-
 		// No nonce can be here.
 		// phpcs:disable WordPress.Security.NonceVerification.Missing
 		if ( ! isset( $_POST['application_id'] ) ) {
@@ -446,11 +449,13 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		$application_id = sanitize_text_field( wp_unslash( $_POST['application_id'] ) );
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
 
+		$result_message = $this->wc_paylate_get_result_message( $state );
+
 		if ( self::$log_enabled ) {
 			$message = "\n" . __( 'Response from PayLate', 'woo-paylate' ) . "\n";
 
 			$message .= 'order_id="' . $order_id . '"' . "\n";
-			$message .= 'state="' . $state . '" - ' . wc_paylate_get_result_message( $state ) . "\n";
+			$message .= 'state="' . $state . '" - ' . $result_message . "\n";
 			$message .= 'sum="' . $sum . '"' . "\n";
 			$message .= 'token="' . $token . '"' . "\n";
 			$message .= 'application_id="' . $application_id . '"' . "\n";
@@ -501,7 +506,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		switch ( $state ) {
 			case - 1:
 				if ( $return ) {
-					$order->add_order_note( wc_paylate_get_result_message( $state ) );
+					$order->add_order_note( $result_message );
 					$order->update_status(
 						'cancelled',
 						__( 'Order cancelled by customer.', 'woocommerce' )
@@ -519,7 +524,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 
 			case 0:
 				if ( $return ) {
-					$order->add_order_note( wc_paylate_get_result_message( $state ) );
+					$order->add_order_note( $result_message );
 					echo "RESULT:1\nDESCR:" . esc_html__( 'Order is actual', 'woo-paylate' );
 					die;
 				}
@@ -534,7 +539,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 			case 1:
 				if ( $return ) {
 					$order->add_order_note(
-						wc_paylate_get_result_message( $state ) . "\n" .
+						$result_message . "\n" .
 						'application_id=' . $application_id
 					);
 
@@ -646,7 +651,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		$menu_title  = __( 'PayLate', 'woo-paylate' );
 		$capability  = 'manage_options';
 		$menu_slug   = 'wc-paylate';
-		$function    = [ $this, 'woocommerce_paylate_settings_page' ];
+		$function    = [ $this, 'settings_page' ];
 
 		add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function );
 	}
@@ -654,7 +659,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	/**
 	 * Empty settings page.
 	 */
-	public function woocommerce_paylate_settings_page() {
+	public function settings_page() {
 		?>
 		<div class="wrap">
 			<h2 id="title">
@@ -681,7 +686,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	 *
 	 * @return string Button html.
 	 */
-	public function paylate_widget_shortcode( $atts ): string {
+	public function widget_shortcode( $atts ): string {
 		$atts = shortcode_atts(
 			[
 				'class'       => '',
@@ -717,7 +722,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	 *
 	 * @return string Button html.
 	 */
-	public function paylate_buy_button_shortcode( $atts ): string {
+	public function buy_button_shortcode( $atts ): string {
 		$atts = shortcode_atts(
 			[
 				'name'     => '',
@@ -802,6 +807,28 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 		<?php
 
 		return (string) ob_get_clean();
+	}
+
+	/**
+	 * Get a result message.
+	 *
+	 * @param string $result Result code.
+	 *
+	 * @return string
+	 * @noinspection PackedHashtableOptimizationInspection
+	 */
+	private function wc_paylate_get_result_message( $result ): string {
+		$result_messages = [
+			'-1' => __( 'Order is cancelled by client', 'woo-paylate' ),
+			'0'  => __( 'PayLate requests to ship order', 'woo-paylate' ),
+			'1'  => __( 'PayLate payment approved', 'woo-paylate' ),
+		];
+
+		if ( array_key_exists( $result, $result_messages ) ) {
+			return $result_messages[ $result ];
+		}
+
+		return __( 'Unknown error', 'woo-paylate' );
 	}
 
 	/**

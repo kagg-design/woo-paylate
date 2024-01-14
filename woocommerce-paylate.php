@@ -20,6 +20,8 @@
  * @author  KAGG Design
  */
 
+use KAGG\Paylate\Main;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -51,18 +53,18 @@ const WOO_PAYLATE_FILE = __FILE__;
 require_once WOO_PAYLATE_PATH . '/vendor/autoload.php';
 
 /**
- * Return instance of WC_PayLate_Plugin.
+ * Return instance of Main.
  *
- * @return WC_PayLate_Plugin
+ * @return Main
  */
 function wc_paylate_plugin() {
 	static $plugin;
 
 	if ( ! $plugin ) {
-		$plugin = new WC_PayLate_Plugin();
+		$plugin = new Main();
 	}
 
 	return $plugin;
 }
 
-wc_paylate_plugin()->maybe_run();
+wc_paylate_plugin()->init();

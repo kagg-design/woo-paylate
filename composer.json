@@ -4,9 +4,8 @@
   "license": "GPL-2.0",
   "keywords": [
     "woocommerce",
-    "filter",
-    "woocommerce product filter",
-    "filter category"
+    "paylate",
+    "payment"
   ],
   "homepage": "https://kagg.eu/en/",
   "type": "wordpress-plugin",
@@ -24,12 +23,14 @@
   "prefer-stable": true,
   "config": {
     "platform": {
-      "php": "5.6"
+      "php": "7.0"
     },
     "allow-plugins": {
-      "composer/installers": true,
       "dealerdirect/phpcodesniffer-composer-installer": true
     }
+  },
+  "require": {
+    "ext-json": "*"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
@@ -39,11 +40,8 @@
     "wp-coding-standards/wpcs": "^3.0.1"
   },
   "autoload": {
-    "classmap": [
-      "classes"
-    ]
-  },
-  "require": {
-    "ext-json": "*"
+    "psr-4": {
+      "KAGG\\Paylate\\": "src/php"
+    }
   }
 }

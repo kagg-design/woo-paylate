@@ -1,14 +1,16 @@
 <?php
 /**
- * WC_PayLate_Plugin class file.
+ * Main class file.
  *
  * @package woo-paylate
  */
 
+namespace KAGG\Paylate;
+
 /**
- * Class WC_PayLate_Plugin
+ * Class Main
  */
-class WC_PayLate_Plugin {
+class Main {
 
 	/**
 	 * Required plugins.
@@ -32,7 +34,7 @@ class WC_PayLate_Plugin {
 	public static $log = false;
 
 	/**
-	 * WC_PayLate_Plugin constructor.
+	 * Main constructor.
 	 */
 	public function __construct() {
 		$this->required_plugins = [
@@ -50,16 +52,16 @@ class WC_PayLate_Plugin {
 	}
 
 	/**
-	 * Maybe run plugin.
+	 * Init plugin.
 	 */
-	public function maybe_run() {
+	public function init() {
 		add_action( 'admin_init', [ $this, 'check_requirements' ] );
 
 		if ( ! $this->requirements_met() ) {
 			return;
 		}
 
-		add_filter( 'woocommerce_payment_gateways', [ $this, 'add_paylate_gateway_class' ] );
+		add_filter( 'woocommerce_payment_gateways', [ $this, 'add_gateway' ] );
 
 		add_filter( 'plugin_action_links_' . plugin_basename( WOO_PAYLATE_FILE ), [ $this, 'add_settings_link' ] );
 		add_action( 'plugins_loaded', [ $this, 'load_textdomain' ] );
@@ -73,9 +75,9 @@ class WC_PayLate_Plugin {
 	 *
 	 * @return array
 	 */
-	public function add_paylate_gateway_class( $methods ): array {
+	public function add_gateway( $methods ): array {
 		$methods   = (array) $methods;
-		$methods[] = 'WC_PayLate_Gateway';
+		$methods[] = Gateway::class;
 
 		return $methods;
 	}
