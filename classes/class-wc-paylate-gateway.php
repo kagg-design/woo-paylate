@@ -17,7 +17,7 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 	/**
 	 * Default test port.
 	 */
-	const DEFAULT_TEST_PORT = '21443';
+	const DEFAULT_TEST_PORT = '443';
 
 	/**
 	 * Plugin id.
