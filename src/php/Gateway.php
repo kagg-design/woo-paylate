@@ -660,23 +660,7 @@ class Gateway extends WC_Payment_Gateway {
 	 * Empty settings page.
 	 */
 	public function settings_page() {
-		?>
-		<div class="wrap">
-			<h2 id="title">
-				<?php
-				// Admin panel title.
-				esc_html_e( 'Gateway for PayLate on WooCommerce Plugin Options', 'woo-paylate' );
-				?>
-			</h2>
-			<p>
-				<a href="<?php echo esc_url( admin_url( 'admin.php?page=wc-settings&tab=checkout&section=paylate_gateway' ) ); ?>">
-					<?php
-					esc_html_e( 'Please follow this link to see plugin options.', 'woo-paylate' );
-					?>
-				</a>
-			</p>
-		</div>
-		<?php
+		wp_safe_redirect( admin_url( 'admin.php?page=wc-settings&tab=checkout&section=paylate_gateway' ) );
 	}
 
 	/**
