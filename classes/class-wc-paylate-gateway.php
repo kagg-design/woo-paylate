@@ -147,7 +147,6 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 			$this->password  = $this->get_option( 'password' );
 		}
 
-		add_filter( 'woocommerce_payment_gateways', [ $this, 'add_paylate_gateway_class' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_filter( 'script_loader_tag', [ $this, 'script_loader_tag_filter' ], 10, 2 );
 		add_shortcode( 'paylate_widget', [ $this, 'paylate_widget_shortcode' ] );
@@ -560,19 +559,6 @@ class WC_PayLate_Gateway extends WC_Payment_Gateway {
 
 				return null;
 		}
-	}
-
-	/**
-	 * Add PayLate gateway class in WooCommerce payment methods.
-	 *
-	 * @param array $methods - array of WooCommerce payment methods.
-	 *
-	 * @return array
-	 */
-	public function add_paylate_gateway_class( $methods ) {
-		$methods[] = 'WC_PayLate_Gateway';
-
-		return $methods;
 	}
 
 	/**

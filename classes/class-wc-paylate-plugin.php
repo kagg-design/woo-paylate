@@ -59,21 +59,24 @@ class WC_PayLate_Plugin {
 			return;
 		}
 
-		add_action( 'plugins_loaded', [ $this, 'bootstrap' ] );
+		add_filter( 'woocommerce_payment_gateways', [ $this, 'add_paylate_gateway_class' ] );
+
 		add_filter( 'plugin_action_links_' . plugin_basename( WOO_PAYLATE_FILE ), [ $this, 'add_settings_link' ] );
 		add_action( 'plugins_loaded', [ $this, 'load_textdomain' ] );
 		add_action( 'init', [ $this, 'check_for_paylate' ] );
 	}
 
 	/**
-	 * Bootstrap plugin on 'plugins_loaded' event.
+	 * Add PayLate gateway class in WooCommerce payment methods.
+	 *
+	 * @param array $methods - array of WooCommerce payment methods.
+	 *
+	 * @return array
 	 */
-	public function bootstrap() {
-		static $gateway;
+	public function add_paylate_gateway_class( $methods ) {
+		$methods[] = 'WC_PayLate_Gateway';
 
-		if ( ! isset( $gateway ) ) {
-			$gateway = new WC_PayLate_Gateway();
-		}
+		return $methods;
 	}
 
 	/**
