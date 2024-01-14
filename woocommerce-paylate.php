@@ -6,7 +6,7 @@
  * Author: KAGG Design
  * Version: 2.0.0
  * Author URI: https://kagg.eu/en/
- * Requires at least: 4.4
+ * Requires at least: 5.0
  * Tested up to: 6.4
  * Requires at least: 5.0
  * Requires PHP: 7.0
