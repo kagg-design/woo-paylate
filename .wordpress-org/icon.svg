@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 512 512" width="512px" height="512px" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient gradientUnits="userSpaceOnUse" cx="147.578" cy="158.188" r="256" id="gradient-0"
+                        gradientTransform="matrix(0.952078, 0.362649, -0.355955, 0.934503, 63.379931, -43.158238)">
+            <stop offset="0" style="stop-color: rgb(255, 0, 244);"/>
+            <stop offset="1" style="stop-color: rgb(179, 11, 83);"/>
+        </radialGradient>
+        <radialGradient gradientUnits="userSpaceOnUse" cx="117.406" cy="147.578" r="256" id="gradient-1"
+                        gradientTransform="matrix(0.92488, 0.55563, -0.514974, 0.857206, 84.818455, -44.161021)">
+            <stop offset="0" style="stop-color: rgb(234, 234, 234);"/>
+            <stop offset="1" style="stop-color: rgb(131, 121, 125);"/>
+        </radialGradient>
+    </defs>
+    <circle style="color:#ff00f4; fill-rule: nonzero; fill: url('#gradient-0'); stroke: url('#gradient-1'); stroke-width: 16px;"
+            cx="256" cy="256" r="246"/>
+    <circle style="stroke: rgb(0, 0, 0); fill: rgb(255, 255, 255); paint-order: stroke; stroke-width: 0px;" cx="256"
+            cy="256" r="30"/>
+    <rect style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(255, 255, 255); transform-box: fill-box; transform-origin: 50% 50%;"
+          x="248" y="92.249" width="16" height="140" rx="5" ry="5"
+          transform="matrix(0.980785, 0.19509, -0.19509, 0.980785, 14.961177, 20.703968)"/>
+    <rect style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(255, 255, 255); transform-box: fill-box; transform-origin: 50% 50%;"
+          x="249.294" y="107.525" width="16" height="180" rx="5" ry="5"
+          transform="matrix(-0.707107, 0.707107, -0.707107, -0.707107, 66.716741, 125.639303)"/>
+</svg>
