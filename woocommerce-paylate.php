@@ -4,14 +4,14 @@
  * Plugin URI: https://wordpress.org/plugins/woo-paylate/
  * Description: WooCommerce payment gateway for PayLate service.
  * Author: KAGG Design
- * Version: 2.0.0
+ * Version: 2.1.0
  * Author URI: https://kagg.eu/en/
  * Requires at least: 5.0
- * Tested up to: 6.4
+ * Tested up to: 6.5
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * WC requires at least: 3.0
- * WC tested up to: 8.4
+ * WC tested up to: 8.6
  *
  * Text Domain: woo-paylate
  * Domain Path: /languages/
@@ -33,7 +33,7 @@ if ( defined( 'WOO_PAYLATE_VERSION' ) ) {
 /**
  * Plugin version.
  */
-const WOO_PAYLATE_VERSION = '2.0.0';
+const WOO_PAYLATE_VERSION = '2.1.0';
 
 /**
  * Path to the plugin dir.

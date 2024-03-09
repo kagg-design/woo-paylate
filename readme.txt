@@ -3,9 +3,9 @@ Contributors: kaggdesign
 Donate link: https://www.paypal.me/kagg
 Tags: woocommerce, gateway, paylate
 Requires at least: 5.0
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,39 +86,43 @@ If you get stuck, you can ask for help in the [Gateway for PayLate on WooCommerc
 
 == Changelog ==
 
+= 2.1.0 =
+* Tested with WordPress 6.5.
+* Tested with WooCommerce 8.6.
+
 = 2.0.0 =
 * The minimum required WordPress version is now 5.0.
 * The minimum required PHP version is now 7.0.
-* Tested with WordPress 6.4
-* Tested with WooCommerce 8.4
+* Tested with WordPress 6.4.
+* Tested with WooCommerce 8.4.
 * Fixed duplicated submenu.
 
 = 1.5.2 =
-* Freemius library removed
-* Tested with WordPress 6.0
-* Tested with WooCommerce 6.5
+* Freemius library removed.
+* Tested with WordPress 6.0.
+* Tested with WooCommerce 6.5.
 
 = 1.4 =
-* Fixed security issue in Freemius SDK
-* Tested with WorPress 5.5
-* Tested with WooCommerce 4.7
+* Fixed security issue in Freemius SDK.
+* Tested with WorPress 5.5.
+* Tested with WooCommerce 4.7.
 
 = 1.3.3 =
-* Tested with WorPress 5.3
+* Tested with WorPress 5.3.
 
 = 1.3.2 =
-* Tested with WorPress 5.3
-* Minimal php version bumped up to 5.6
+* Tested with WorPress 5.3.
+* Minimal php version bumped up to 5.6.
 
 = 1.3.1 =
-* Fixed security issue of Freemius SDK
+* Fixed security issue of Freemius SDK.
 
 = 1.3.0 =
-* Tested with WordPress 5.1
-* Default https port is set to 443
+* Tested with WordPress 5.1.
+* Default https port is set to 443.
 
 = 1.2 =
-* Tested with WooCommerce 3.5
+* Tested with WooCommerce 3.5.
 
 = 1.0 =
 * Initial release.
